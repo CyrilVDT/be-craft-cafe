@@ -1,73 +1,10 @@
 /* ============================================================
-   BE CRAFT CAFÉ — interactions + i18n (EN / CS)
+   Kavárna u Valentýny — interactions + i18n (CS / EN)
    ============================================================ */
 
 const translations = {
-  en: {
-    meta_desc: "BE CRAFT CAFÉ — craft coffee, food and beer in the heart of Prague.",
-
-    nav_home: "Home",
-    nav_menu: "Menu",
-    nav_about: "About",
-    nav_gallery: "Gallery",
-    nav_contact: "Contact",
-
-    hero_eyebrow: "Prague · Craft coffee bar",
-    hero_title: "BE CRAFT CAFÉ",
-    hero_sub: "Craft coffee, fresh food and local beer — in a cosy corner of the old town.",
-    hero_cta_menu: "See the menu",
-    hero_cta_visit: "Visit us",
-
-    menu_eyebrow: "Menu",
-    menu_title: "What's on",
-    menu_lead: "Everything made with care. Prices in CZK.",
-    menu_coffee: "Coffee",
-    menu_food: "Food",
-    menu_beer: "Beer & Bar",
-    menu_note: "* The menu changes with the seasons — ask our baristas about today's specials.",
-
-    mi_espresso_orange: "Espresso Orange",
-    mi_grilled_cheese: "Grilled Cheese",
-    mi_reuben: 'Grilled Panini "Reuben"',
-    mi_panini_veggie: "Panini Veggie",
-    mi_panini_chicken: "Panini Chicken",
-    mi_sardine: "Sardine Sandwich",
-    mi_kolac: "Koláč (pastry)",
-    mi_kolac_crisps: "Koláč Crisps",
-    mi_mix_starter: "Mix Starter Board",
-    mi_dark_beer: "Dark beer (draught)",
-    mi_lager: "Lager (draught)",
-    mi_ipa: "Craft IPA",
-    mi_wine: "House wine (glass)",
-    mi_lemonade: "Homemade lemonade",
-
-    about_eyebrow: "About us",
-    about_title: "A small café with a big heart",
-    about_p1: "BE CRAFT CAFÉ is a cosy craft coffee bar tucked into a quiet cobblestone street in Prague. We roast for flavour, pour with patience and treat every guest like a regular.",
-    about_p2: "By day we serve specialty coffee, fresh paninis and homemade pastries. By evening we pour local craft beer and wine — the perfect spot to slow down. And yes, we're a little bit mad about cats. 🐱",
-    about_point1: "Specialty coffee, freshly ground",
-    about_point2: "Homemade food & pastries",
-    about_point3: "Local craft beer on tap",
-
-    gallery_eyebrow: "Gallery",
-    gallery_title: "Come on in",
-
-    contact_eyebrow: "Contact",
-    contact_title: "Find us",
-    contact_address_label: "Address",
-    contact_hours_label: "Opening hours",
-    contact_hours_week: "Mon–Fri: 8:00 – 20:00",
-    contact_hours_weekend: "Sat–Sun: 9:00 – 22:00",
-    contact_phone_label: "Phone",
-    contact_social_label: "Social",
-    contact_map_link: "Open in map ↗",
-
-    footer_made: "Made with coffee in Prague",
-    footer_top: "Back to top ↑",
-  },
-
   cs: {
-    meta_desc: "BE CRAFT CAFÉ — řemeslná káva, jídlo a pivo v srdci Prahy.",
+    meta_desc: "Kavárna u Valentýny — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy.",
 
     nav_home: "Úvod",
     nav_menu: "Menu",
@@ -75,42 +12,24 @@ const translations = {
     nav_gallery: "Galerie",
     nav_contact: "Kontakt",
 
-    hero_eyebrow: "Praha · Řemeslná kavárna",
-    hero_title: "BE CRAFT CAFÉ",
-    hero_sub: "Řemeslná káva, čerstvé jídlo a lokální pivo — v útulném koutě starého města.",
+    hero_eyebrow: "Praha · Kavárna & bar",
+    hero_title: "Kavárna u Valentýny",
+    hero_sub: "Výběrová káva, čerstvé croissanty a domácí snídaně — v příjemné atmosféře v centru Prahy.",
     hero_cta_menu: "Zobrazit menu",
     hero_cta_visit: "Navštivte nás",
 
     menu_eyebrow: "Menu",
-    menu_title: "Nabídka",
+    menu_title: "Naše nabídka",
     menu_lead: "Vše připravené s láskou. Ceny v Kč.",
-    menu_coffee: "Káva",
-    menu_food: "Jídlo",
-    menu_beer: "Pivo & bar",
-    menu_note: "* Menu se mění podle sezóny — zeptejte se baristů na dnešní speciality.",
-
-    mi_espresso_orange: "Espresso s pomerančem",
-    mi_grilled_cheese: "Grilovaný sýr",
-    mi_reuben: 'Grilované panini "Reuben"',
-    mi_panini_veggie: "Panini vegetariánské",
-    mi_panini_chicken: "Panini s kuřecím",
-    mi_sardine: "Sendvič se sardinkami",
-    mi_kolac: "Koláč",
-    mi_kolac_crisps: "Koláčové chipsy",
-    mi_mix_starter: "Mix předkrmů",
-    mi_dark_beer: "Tmavé pivo (točené)",
-    mi_lager: "Ležák (točený)",
-    mi_ipa: "Řemeslné IPA",
-    mi_wine: "Víno rozlévané (sklenka)",
-    mi_lemonade: "Domácí limonáda",
+    menu_note: "* U alergenů se řiďte značením v tištěném menu. Zeptejte se obsluhy na dnešní speciality.",
 
     about_eyebrow: "O nás",
-    about_title: "Malá kavárna s velkým srdcem",
-    about_p1: "BE CRAFT CAFÉ je útulná řemeslná kavárna schovaná v tiché dlážděné uličce v Praze. Kávu pražíme kvůli chuti, připravujeme ji s trpělivostí a ke každému hostovi se chováme jako ke stálému.",
-    about_p2: "Přes den podáváme výběrovou kávu, čerstvá panini a domácí koláče. Večer čepujeme lokální řemeslné pivo a víno — ideální místo, kde zpomalit. A ano, jsme tak trochu blázni do koček. 🐱",
-    about_point1: "Výběrová káva, čerstvě mletá",
-    about_point2: "Domácí jídlo & koláče",
-    about_point3: "Lokální řemeslné pivo z pípy",
+    about_title: "Útulná kavárna se srdcem",
+    about_p1: "Kavárna u Valentýny je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.",
+    about_p2: "Ráno u nás dostanete výběrovou kávu, čerstvé croissanty a snídaňové kombo. Odpoledne a večer čepujeme řemeslné pivo, rozléváme víno a mícháme koktejly — ideální místo, kde zpomalit.",
+    about_point1: "Výběrová káva & matcha",
+    about_point2: "Čerstvé croissanty a snídaně",
+    about_point3: "Řemeslné pivo, víno & koktejly",
 
     gallery_eyebrow: "Galerie",
     gallery_title: "Pojďte dál",
@@ -128,18 +47,104 @@ const translations = {
     footer_made: "Vytvořeno s kávou v Praze",
     footer_top: "Nahoru ↑",
   },
+
+  en: {
+    meta_desc: "Kavárna u Valentýny — specialty coffee, croissants, breakfast and craft beer in the heart of Prague.",
+
+    nav_home: "Home",
+    nav_menu: "Menu",
+    nav_about: "About",
+    nav_gallery: "Gallery",
+    nav_contact: "Contact",
+
+    hero_eyebrow: "Prague · Café & bar",
+    hero_title: "Kavárna u Valentýny",
+    hero_sub: "Specialty coffee, fresh croissants and homemade breakfast — in a warm spot in the centre of Prague.",
+    hero_cta_menu: "See the menu",
+    hero_cta_visit: "Visit us",
+
+    menu_eyebrow: "Menu",
+    menu_title: "Our menu",
+    menu_lead: "Everything made with care. Prices in CZK.",
+    menu_note: "* For allergens please refer to the printed menu. Ask our staff about today's specials.",
+
+    about_eyebrow: "About us",
+    about_title: "A cosy café with a heart",
+    about_p1: "Kavárna u Valentýny is a cosy spot tucked into a quiet cobblestone street in Prague. We pour our coffee with patience and treat every guest like a regular.",
+    about_p2: "In the morning we serve specialty coffee, fresh croissants and breakfast combos. In the afternoon and evening we pour craft beer, wine and cocktails — the perfect place to slow down.",
+    about_point1: "Specialty coffee & matcha",
+    about_point2: "Fresh croissants & breakfast",
+    about_point3: "Craft beer, wine & cocktails",
+
+    gallery_eyebrow: "Gallery",
+    gallery_title: "Come on in",
+
+    contact_eyebrow: "Contact",
+    contact_title: "Find us",
+    contact_address_label: "Address",
+    contact_hours_label: "Opening hours",
+    contact_hours_week: "Mon–Fri: 8:00 – 20:00",
+    contact_hours_weekend: "Sat–Sun: 9:00 – 22:00",
+    contact_phone_label: "Phone",
+    contact_social_label: "Social",
+    contact_map_link: "Open in map ↗",
+
+    footer_made: "Made with coffee in Prague",
+    footer_top: "Back to top ↑",
+  },
 };
 
-const STORAGE_KEY = "becraft-lang";
+const STORAGE_KEY = "uvalentyny-lang";
+let currentLang = "cs";
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function renderMenu(lang) {
+  const grid = document.getElementById("menuGrid");
+  if (!grid || typeof MENU_DATA === "undefined") return;
+
+  grid.innerHTML = MENU_DATA.map((cat) => {
+    const title = escapeHtml(cat.title[lang] || cat.title.cs);
+    const note = cat.note ? `<span class="menu-card-note">${escapeHtml(cat.note[lang] || cat.note.cs)}</span>` : "";
+
+    const items = cat.items.map((it) => {
+      const name = escapeHtml(it.name[lang] || it.name.cs);
+      const desc = it.desc ? `<span class="mi-desc">${escapeHtml(it.desc[lang] || it.desc.cs)}</span>` : "";
+      return `
+        <li class="mi">
+          <div class="mi-main">
+            <span class="mi-name">${name}</span>
+            <span class="mi-dots"></span>
+            <span class="mi-price">${escapeHtml(it.price)}</span>
+          </div>
+          ${desc}
+        </li>`;
+    }).join("");
+
+    return `
+      <article class="menu-card" id="menu-${cat.id}">
+        <header class="menu-card-head">
+          <h3>${title}</h3>
+          ${note}
+        </header>
+        <ul class="menu-list">${items}</ul>
+      </article>`;
+  }).join("");
+}
 
 function applyLanguage(lang) {
-  const dict = translations[lang] || translations.en;
+  const dict = translations[lang] || translations.cs;
+  currentLang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     const value = dict[key];
     if (value === undefined) return;
-
     if (el.tagName === "META") {
       el.setAttribute("content", value);
     } else {
@@ -153,19 +158,19 @@ function applyLanguage(lang) {
     btn.classList.toggle("is-active", btn.dataset.lang === lang);
   });
 
-  try {
-    localStorage.setItem(STORAGE_KEY, lang);
-  } catch (_) { /* ignore */ }
+  renderMenu(lang);
+
+  try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* ignore */ }
 }
 
 function initLanguage() {
-  let lang = "en";
+  let lang = "cs";
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved && translations[saved]) {
       lang = saved;
-    } else if ((navigator.language || "").toLowerCase().startsWith("cs")) {
-      lang = "cs";
+    } else if ((navigator.language || "").toLowerCase().startsWith("en")) {
+      lang = "en";
     }
   } catch (_) { /* ignore */ }
 

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BE CRAFT CAFÉ — Prague</title>
-  <meta name="description" content="BE CRAFT CAFÉ — craft coffee, food and beer in the heart of Prague." data-i18n="meta_desc" />
+  <title>Kavárna u Valentýny — Praha</title>
+  <meta name="description" content="Kavárna u Valentýny — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy." data-i18n="meta_desc" />
+  <meta name="theme-color" content="#faf3e8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <!-- Header / Nav -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="BE CRAFT CAFÉ">
-        <span class="brand-cat" aria-hidden="true">🐱</span>
-        <span class="brand-text">BE <em>CRAFT</em> CAFÉ</span>
+      <a href="#top" class="brand" aria-label="Kavárna u Valentýny">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span class="brand-text">Kavárna <em>u Valentýny</em></span>
       </a>
 
       <nav class="main-nav" aria-label="Main">
@@ -24,15 +25,15 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="navMenu">
-          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#home" data-i18n="nav_home">Úvod</a></li>
           <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
-          <li><a href="#about" data-i18n="nav_about">About</a></li>
-          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="#about" data-i18n="nav_about">O nás</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
           <li class="lang-switch" role="group" aria-label="Language">
-            <button data-lang="en" class="lang-btn is-active">EN</button>
+            <button data-lang="cs" class="lang-btn is-active">CZ</button>
             <span aria-hidden="true">/</span>
-            <button data-lang="cs" class="lang-btn">CZ</button>
+            <button data-lang="en" class="lang-btn">EN</button>
           </li>
         </ul>
       </nav>
@@ -42,15 +43,15 @@
   <main>
     <!-- Hero -->
     <section class="hero" id="home">
-      <div class="hero-bg" style="background-image:url('assets/images/exterior.jpg')"></div>
-      <div class="hero-overlay"></div>
+      <div class="hero-bg" style="background-image:url('assets/images/hero.jpg')"></div>
+      <div class="hero-scrim"></div>
       <div class="container hero-content">
-        <p class="eyebrow" data-i18n="hero_eyebrow">Prague · Craft coffee bar</p>
-        <h1 data-i18n="hero_title">BE CRAFT CAFÉ</h1>
-        <p class="hero-sub" data-i18n="hero_sub">Craft coffee, fresh food and local beer — in a cosy corner of the old town.</p>
+        <p class="eyebrow" data-i18n="hero_eyebrow">Praha · Kavárna &amp; bar</p>
+        <h1 data-i18n="hero_title">Kavárna u Valentýny</h1>
+        <p class="hero-sub" data-i18n="hero_sub">Výběrová káva, čerstvé croissanty a domácí snídaně — v příjemné atmosféře v centru Prahy.</p>
         <div class="hero-actions">
-          <a href="#menu" class="btn btn-primary" data-i18n="hero_cta_menu">See the menu</a>
-          <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_visit">Visit us</a>
+          <a href="#menu" class="btn btn-primary" data-i18n="hero_cta_menu">Zobrazit menu</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_visit">Navštivte nás</a>
         </div>
       </div>
     </section>
@@ -60,56 +61,15 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow" data-i18n="menu_eyebrow">Menu</p>
-          <h2 data-i18n="menu_title">What's on</h2>
-          <p class="section-lead" data-i18n="menu_lead">Everything made with care. Prices in CZK.</p>
+          <h2 data-i18n="menu_title">Naše nabídka</h2>
+          <p class="section-lead" data-i18n="menu_lead">Vše připravené s láskou. Ceny v Kč.</p>
         </header>
 
-        <div class="menu-grid">
-          <!-- Coffee -->
-          <div class="menu-card">
-            <h3 data-i18n="menu_coffee">Coffee</h3>
-            <ul class="menu-list">
-              <li><span class="mi-name">Espresso</span><span class="mi-dots"></span><span class="mi-price">55</span></li>
-              <li><span class="mi-name">Americano</span><span class="mi-dots"></span><span class="mi-price">65</span></li>
-              <li><span class="mi-name">Cappuccino</span><span class="mi-dots"></span><span class="mi-price">75</span></li>
-              <li><span class="mi-name">Flat White</span><span class="mi-dots"></span><span class="mi-price">85</span></li>
-              <li><span class="mi-name">Latte</span><span class="mi-dots"></span><span class="mi-price">85</span></li>
-              <li><span class="mi-name">Iced Latte</span><span class="mi-dots"></span><span class="mi-price">90</span></li>
-              <li><span class="mi-name">Espresso Tonic</span><span class="mi-dots"></span><span class="mi-price">95</span></li>
-              <li><span class="mi-name" data-i18n="mi_espresso_orange">Espresso Orange</span><span class="mi-dots"></span><span class="mi-price">95</span></li>
-              <li><span class="mi-name">Matcha Latte</span><span class="mi-dots"></span><span class="mi-price">99</span></li>
-            </ul>
-          </div>
-
-          <!-- Food -->
-          <div class="menu-card">
-            <h3 data-i18n="menu_food">Food</h3>
-            <ul class="menu-list">
-              <li><span class="mi-name" data-i18n="mi_grilled_cheese">Grilled Cheese</span><span class="mi-dots"></span><span class="mi-price">139</span></li>
-              <li><span class="mi-name" data-i18n="mi_reuben">Grilled Panini "Reuben"</span><span class="mi-dots"></span><span class="mi-price">149</span></li>
-              <li><span class="mi-name" data-i18n="mi_panini_veggie">Panini Veggie</span><span class="mi-dots"></span><span class="mi-price">159</span></li>
-              <li><span class="mi-name" data-i18n="mi_panini_chicken">Panini Chicken</span><span class="mi-dots"></span><span class="mi-price">169</span></li>
-              <li><span class="mi-name" data-i18n="mi_sardine">Sardine Sandwich</span><span class="mi-dots"></span><span class="mi-price">69</span></li>
-              <li><span class="mi-name" data-i18n="mi_kolac">Koláč (pastry)</span><span class="mi-dots"></span><span class="mi-price">30</span></li>
-              <li><span class="mi-name" data-i18n="mi_kolac_crisps">Koláč Crisps</span><span class="mi-dots"></span><span class="mi-price">99</span></li>
-              <li><span class="mi-name" data-i18n="mi_mix_starter">Mix Starter Board</span><span class="mi-dots"></span><span class="mi-price">210</span></li>
-            </ul>
-          </div>
-
-          <!-- Beer & more -->
-          <div class="menu-card">
-            <h3 data-i18n="menu_beer">Beer &amp; Bar</h3>
-            <ul class="menu-list">
-              <li><span class="mi-name" data-i18n="mi_dark_beer">Dark beer (draught)</span><span class="mi-dots"></span><span class="mi-price">65</span></li>
-              <li><span class="mi-name" data-i18n="mi_lager">Lager (draught)</span><span class="mi-dots"></span><span class="mi-price">55</span></li>
-              <li><span class="mi-name" data-i18n="mi_ipa">Craft IPA</span><span class="mi-dots"></span><span class="mi-price">89</span></li>
-              <li><span class="mi-name" data-i18n="mi_wine">House wine (glass)</span><span class="mi-dots"></span><span class="mi-price">89</span></li>
-              <li><span class="mi-name">Aperol Spritz</span><span class="mi-dots"></span><span class="mi-price">129</span></li>
-              <li><span class="mi-name" data-i18n="mi_lemonade">Homemade lemonade</span><span class="mi-dots"></span><span class="mi-price">75</span></li>
-            </ul>
-          </div>
+        <div class="menu-grid" id="menuGrid">
+          <!-- Rendered by js/main.js -->
         </div>
-        <p class="menu-note" data-i18n="menu_note">* The menu changes with the seasons — ask our baristas about today's specials.</p>
+
+        <p class="menu-note" data-i18n="menu_note">* U alergenů se řiďte značením v tištěném menu. Zeptejte se obsluhy na dnešní speciality.</p>
       </div>
     </section>
 
@@ -117,17 +77,17 @@
     <section class="section about" id="about">
       <div class="container about-grid">
         <div class="about-media">
-          <img src="assets/images/bar.jpg" alt="The bar at BE CRAFT CAFÉ" loading="lazy" />
+          <img src="assets/images/interior.jpg" alt="Interiér Kavárny u Valentýny" loading="lazy" />
         </div>
         <div class="about-text">
-          <p class="eyebrow" data-i18n="about_eyebrow">About us</p>
-          <h2 data-i18n="about_title">A small café with a big heart</h2>
-          <p data-i18n="about_p1">BE CRAFT CAFÉ is a cosy craft coffee bar tucked into a quiet cobblestone street in Prague. We roast for flavour, pour with patience and treat every guest like a regular.</p>
-          <p data-i18n="about_p2">By day we serve specialty coffee, fresh paninis and homemade pastries. By evening we pour local craft beer and wine — the perfect spot to slow down. And yes, we're a little bit mad about cats. 🐱</p>
+          <p class="eyebrow" data-i18n="about_eyebrow">O nás</p>
+          <h2 data-i18n="about_title">Útulná kavárna se srdcem</h2>
+          <p data-i18n="about_p1">Kavárna u Valentýny je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.</p>
+          <p data-i18n="about_p2">Ráno u nás dostanete výběrovou kávu, čerstvé croissanty a snídaňové kombo. Odpoledne a večer čepujeme řemeslné pivo, rozléváme víno a mícháme koktejly — ideální místo, kde zpomalit.</p>
           <ul class="about-points">
-            <li data-i18n="about_point1">Specialty coffee, freshly ground</li>
-            <li data-i18n="about_point2">Homemade food &amp; pastries</li>
-            <li data-i18n="about_point3">Local craft beer on tap</li>
+            <li data-i18n="about_point1">Výběrová káva &amp; matcha</li>
+            <li data-i18n="about_point2">Čerstvé croissanty a snídaně</li>
+            <li data-i18n="about_point3">Řemeslné pivo, víno &amp; koktejly</li>
           </ul>
         </div>
       </div>
@@ -137,18 +97,21 @@
     <section class="section gallery" id="gallery">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow" data-i18n="gallery_eyebrow">Gallery</p>
-          <h2 data-i18n="gallery_title">Come on in</h2>
+          <p class="eyebrow" data-i18n="gallery_eyebrow">Galerie</p>
+          <h2 data-i18n="gallery_title">Pojďte dál</h2>
         </header>
         <div class="gallery-grid">
-          <figure class="gallery-item">
-            <img src="assets/images/exterior.jpg" alt="BE CRAFT CAFÉ entrance" loading="lazy" />
+          <figure class="gallery-item wide">
+            <img src="assets/images/hero.jpg" alt="Snídaně a káva" loading="lazy" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/images/bar.jpg" alt="The coffee bar" loading="lazy" />
+            <img src="assets/images/exterior.jpg" alt="Vchod do kavárny" loading="lazy" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/images/interior.jpg" alt="Cosy interior seating" loading="lazy" />
+            <img src="assets/images/bar.jpg" alt="Barový pult" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/interior.jpg" alt="Posezení v kavárně" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -158,30 +121,30 @@
     <section class="section contact" id="contact">
       <div class="container contact-grid">
         <div class="contact-info">
-          <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
-          <h2 data-i18n="contact_title">Find us</h2>
+          <p class="eyebrow" data-i18n="contact_eyebrow">Kontakt</p>
+          <h2 data-i18n="contact_title">Najdete nás</h2>
           <ul class="contact-list">
             <li>
-              <span class="ci-label" data-i18n="contact_address_label">Address</span>
-              <span class="ci-value">Prague, Czech Republic</span>
+              <span class="ci-label" data-i18n="contact_address_label">Adresa</span>
+              <span class="ci-value">Praha, Česká republika</span>
             </li>
             <li>
-              <span class="ci-label" data-i18n="contact_hours_label">Opening hours</span>
+              <span class="ci-label" data-i18n="contact_hours_label">Otevírací doba</span>
               <span class="ci-value">
-                <span data-i18n="contact_hours_week">Mon–Fri: 8:00 – 20:00</span><br />
-                <span data-i18n="contact_hours_weekend">Sat–Sun: 9:00 – 22:00</span>
+                <span data-i18n="contact_hours_week">Po–Pá: 8:00 – 20:00</span><br />
+                <span data-i18n="contact_hours_weekend">So–Ne: 9:00 – 22:00</span>
               </span>
             </li>
             <li>
-              <span class="ci-label" data-i18n="contact_phone_label">Phone</span>
+              <span class="ci-label" data-i18n="contact_phone_label">Telefon</span>
               <span class="ci-value"><a href="tel:+420000000000">+420 000 000 000</a></span>
             </li>
             <li>
               <span class="ci-label">Email</span>
-              <span class="ci-value"><a href="mailto:hello@becraftcafe.cz">hello@becraftcafe.cz</a></span>
+              <span class="ci-value"><a href="mailto:ahoj@uvalentyny.cz">ahoj@uvalentyny.cz</a></span>
             </li>
             <li>
-              <span class="ci-label" data-i18n="contact_social_label">Social</span>
+              <span class="ci-label" data-i18n="contact_social_label">Sítě</span>
               <span class="ci-value"><a href="#" rel="noopener">Instagram</a> · <a href="#" rel="noopener">Facebook</a></span>
             </li>
           </ul>
@@ -192,7 +155,7 @@
             src="https://www.openstreetmap.org/export/embed.html?bbox=14.40%2C50.07%2C14.44%2C50.10&layer=mapnik"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <a class="map-link" href="https://www.openstreetmap.org/#map=15/50.087/14.42" target="_blank" rel="noopener" data-i18n="contact_map_link">Open in map ↗</a>
+          <a class="map-link" href="https://www.openstreetmap.org/#map=15/50.087/14.42" target="_blank" rel="noopener" data-i18n="contact_map_link">Otevřít v mapě ↗</a>
         </div>
       </div>
     </section>
@@ -200,12 +163,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="brand-text small">BE <em>CRAFT</em> CAFÉ</span>
-      <p class="footer-copy">© <span id="year"></span> BE CRAFT CAFÉ · <span data-i18n="footer_made">Made with coffee in Prague</span></p>
-      <a href="#top" class="to-top" data-i18n="footer_top">Back to top ↑</a>
+      <span class="brand-text small">Kavárna <em>u Valentýny</em></span>
+      <p class="footer-copy">© <span id="year"></span> Kavárna u Valentýny · <span data-i18n="footer_made">Vytvořeno s kávou v Praze</span></p>
+      <a href="#top" class="to-top" data-i18n="footer_top">Nahoru ↑</a>
     </div>
   </footer>
 
+  <script src="js/menu-data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
