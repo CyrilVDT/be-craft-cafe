@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavárna u Valentýny — Praha</title>
-  <meta name="description" content="Kavárna u Valentýny — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy." data-i18n="meta_desc" />
+  <title>Krém a Káva — Praha</title>
+  <meta name="description" content="Krém a Káva — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy." data-i18n="meta_desc" />
   <meta name="theme-color" content="#faf3e8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +15,9 @@
   <!-- Header / Nav -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Kavárna u Valentýny">
-        <span class="brand-mark" aria-hidden="true">V</span>
-        <span class="brand-text">Kavárna <em>u Valentýny</em></span>
+      <a href="#top" class="brand" aria-label="Krém a Káva">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-text">Krém <em>a Káva</em></span>
       </a>
 
       <nav class="main-nav" aria-label="Main">
@@ -47,7 +47,7 @@
       <div class="hero-scrim"></div>
       <div class="container hero-content">
         <p class="eyebrow" data-i18n="hero_eyebrow">Praha · Kavárna &amp; bar</p>
-        <h1 data-i18n="hero_title">Kavárna u Valentýny</h1>
+        <h1 data-i18n="hero_title">Krém a Káva</h1>
         <p class="hero-sub" data-i18n="hero_sub">Výběrová káva, čerstvé croissanty a domácí snídaně — v příjemné atmosféře v centru Prahy.</p>
         <div class="hero-actions">
           <a href="#menu" class="btn btn-primary" data-i18n="hero_cta_menu">Zobrazit menu</a>
@@ -77,12 +77,12 @@
     <section class="section about" id="about">
       <div class="container about-grid">
         <div class="about-media">
-          <img src="assets/images/interior.jpg" alt="Interiér Kavárny u Valentýny" loading="lazy" />
+          <img src="assets/images/interior.jpg" alt="Interiér — Krém a Káva" loading="lazy" />
         </div>
         <div class="about-text">
           <p class="eyebrow" data-i18n="about_eyebrow">O nás</p>
           <h2 data-i18n="about_title">Útulná kavárna se srdcem</h2>
-          <p data-i18n="about_p1">Kavárna u Valentýny je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.</p>
+          <p data-i18n="about_p1">Krém a Káva je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.</p>
           <p data-i18n="about_p2">Ráno u nás dostanete výběrovou kávu, čerstvé croissanty a snídaňové kombo. Odpoledne a večer čepujeme řemeslné pivo, rozléváme víno a mícháme koktejly — ideální místo, kde zpomalit.</p>
           <ul class="about-points">
             <li data-i18n="about_point1">Výběrová káva &amp; matcha</li>
@@ -120,22 +120,20 @@
           <ul class="contact-list">
             <li>
               <span class="ci-label" data-i18n="contact_address_label">Adresa</span>
-              <span class="ci-value">Praha, Česká republika</span>
+              <span class="ci-value">Jana Zajíce 167/36<br />170 00 Praha 7 – Holešovice</span>
             </li>
             <li>
               <span class="ci-label" data-i18n="contact_hours_label">Otevírací doba</span>
               <span class="ci-value">
-                <span data-i18n="contact_hours_week">Po–Pá: 8:00 – 20:00</span><br />
-                <span data-i18n="contact_hours_weekend">So–Ne: 9:00 – 22:00</span>
+                <span id="openStatus" class="open-status" hidden></span>
+                <ul id="openingHours" class="hours-list">
+                  <li class="hours-fallback" data-i18n="hours_fallback">Aktuální otvírací dobu najdete na Googlu.</li>
+                </ul>
               </span>
             </li>
             <li>
               <span class="ci-label" data-i18n="contact_phone_label">Telefon</span>
-              <span class="ci-value"><a href="tel:+420000000000">+420 000 000 000</a></span>
-            </li>
-            <li>
-              <span class="ci-label">Email</span>
-              <span class="ci-value"><a href="mailto:ahoj@uvalentyny.cz">ahoj@uvalentyny.cz</a></span>
+              <span class="ci-value"><a id="phoneLink" href="tel:+420775131221">+420 775 131 221</a></span>
             </li>
             <li>
               <span class="ci-label" data-i18n="contact_social_label">Sítě</span>
@@ -146,10 +144,10 @@
         <div class="contact-map">
           <iframe
             title="Map"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=14.40%2C50.07%2C14.44%2C50.10&layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=14.4120%2C50.0985%2C14.4270%2C50.1070&layer=mapnik&marker=50.1025866%2C14.4194572"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <a class="map-link" href="https://www.openstreetmap.org/#map=15/50.087/14.42" target="_blank" rel="noopener" data-i18n="contact_map_link">Otevřít v mapě ↗</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=50.1025866,14.4194572" target="_blank" rel="noopener" data-i18n="contact_map_link">Otevřít v mapě ↗</a>
         </div>
       </div>
     </section>
@@ -157,12 +155,23 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="brand-text small">Kavárna <em>u Valentýny</em></span>
-      <p class="footer-copy">© <span id="year"></span> Kavárna u Valentýny · <span data-i18n="footer_made">Vytvořeno s kávou v Praze</span></p>
+      <span class="brand-text small">Krém <em>a Káva</em></span>
+      <p class="footer-copy">© <span id="year"></span> Krém a Káva · <span data-i18n="footer_made">Vytvořeno s kávou v Praze</span></p>
       <a href="#top" class="to-top" data-i18n="footer_top">Nahoru ↑</a>
     </div>
   </footer>
 
+  <script>
+    /* Google Places — live opening hours & phone.
+       Paste your Google Maps API key below (Maps JavaScript API + Places API,
+       restricted to your site's domain). Until then the fallback values are shown. */
+    window.GMAPS_CONFIG = {
+      key: "YOUR_GOOGLE_MAPS_API_KEY",
+      placeQuery: "be craft café Jana Zajíce 167/36 Praha 7",
+      lat: 50.1025866,
+      lng: 14.4194572,
+    };
+  </script>
   <script src="js/menu-data.js"></script>
   <script src="js/main.js"></script>
 </body>

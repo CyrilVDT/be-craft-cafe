@@ -4,7 +4,7 @@
 
 const translations = {
   cs: {
-    meta_desc: "Kavárna u Valentýny — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy.",
+    meta_desc: "Krém a Káva — výběrová káva, croissanty, snídaně a řemeslné pivo v srdci Prahy.",
 
     nav_home: "Úvod",
     nav_menu: "Menu",
@@ -13,7 +13,7 @@ const translations = {
     nav_contact: "Kontakt",
 
     hero_eyebrow: "Praha · Kavárna & bar",
-    hero_title: "Kavárna u Valentýny",
+    hero_title: "Krém a Káva",
     hero_sub: "Výběrová káva, čerstvé croissanty a domácí snídaně — v příjemné atmosféře v centru Prahy.",
     hero_cta_menu: "Zobrazit menu",
     hero_cta_visit: "Navštivte nás",
@@ -25,7 +25,7 @@ const translations = {
 
     about_eyebrow: "O nás",
     about_title: "Útulná kavárna se srdcem",
-    about_p1: "Kavárna u Valentýny je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.",
+    about_p1: "Krém a Káva je útulné místo schované v tiché dlážděné uličce v Praze. Kávu připravujeme s trpělivostí a ke každému hostovi se chováme jako ke stálému.",
     about_p2: "Ráno u nás dostanete výběrovou kávu, čerstvé croissanty a snídaňové kombo. Odpoledne a večer čepujeme řemeslné pivo, rozléváme víno a mícháme koktejly — ideální místo, kde zpomalit.",
     about_point1: "Výběrová káva & matcha",
     about_point2: "Čerstvé croissanty a snídaně",
@@ -38,8 +38,10 @@ const translations = {
     contact_title: "Najdete nás",
     contact_address_label: "Adresa",
     contact_hours_label: "Otevírací doba",
-    contact_hours_week: "Po–Pá: 8:00 – 20:00",
-    contact_hours_weekend: "So–Ne: 9:00 – 22:00",
+    hours_fallback: "Aktuální otvírací dobu najdete na Googlu.",
+    hours_loading: "Načítání otvírací doby…",
+    open_now: "Otevřeno",
+    closed_now: "Zavřeno",
     contact_phone_label: "Telefon",
     contact_social_label: "Sítě",
     contact_map_link: "Otevřít v mapě ↗",
@@ -49,7 +51,7 @@ const translations = {
   },
 
   en: {
-    meta_desc: "Kavárna u Valentýny — specialty coffee, croissants, breakfast and craft beer in the heart of Prague.",
+    meta_desc: "Krém a Káva — specialty coffee, croissants, breakfast and craft beer in the heart of Prague.",
 
     nav_home: "Home",
     nav_menu: "Menu",
@@ -58,7 +60,7 @@ const translations = {
     nav_contact: "Contact",
 
     hero_eyebrow: "Prague · Café & bar",
-    hero_title: "Kavárna u Valentýny",
+    hero_title: "Krém a Káva",
     hero_sub: "Specialty coffee, fresh croissants and homemade breakfast — in a warm spot in the centre of Prague.",
     hero_cta_menu: "See the menu",
     hero_cta_visit: "Visit us",
@@ -70,7 +72,7 @@ const translations = {
 
     about_eyebrow: "About us",
     about_title: "A cosy café with a heart",
-    about_p1: "Kavárna u Valentýny is a cosy spot tucked into a quiet cobblestone street in Prague. We pour our coffee with patience and treat every guest like a regular.",
+    about_p1: "Krém a Káva is a cosy spot tucked into a quiet cobblestone street in Prague. We pour our coffee with patience and treat every guest like a regular.",
     about_p2: "In the morning we serve specialty coffee, fresh croissants and breakfast combos. In the afternoon and evening we pour craft beer, wine and cocktails — the perfect place to slow down.",
     about_point1: "Specialty coffee & matcha",
     about_point2: "Fresh croissants & breakfast",
@@ -83,8 +85,10 @@ const translations = {
     contact_title: "Find us",
     contact_address_label: "Address",
     contact_hours_label: "Opening hours",
-    contact_hours_week: "Mon–Fri: 8:00 – 20:00",
-    contact_hours_weekend: "Sat–Sun: 9:00 – 22:00",
+    hours_fallback: "You can find current opening hours on Google.",
+    hours_loading: "Loading opening hours…",
+    open_now: "Open now",
+    closed_now: "Closed",
     contact_phone_label: "Phone",
     contact_social_label: "Social",
     contact_map_link: "Open in map ↗",
@@ -137,6 +141,103 @@ function renderMenu(lang) {
   }).join("");
 }
 
+/* ---------- Google Places: live phone & opening hours ---------- */
+
+function renderPhone(place) {
+  const el = document.getElementById("phoneLink");
+  const phone = place.formatted_phone_number || place.international_phone_number;
+  if (el && phone) {
+    el.textContent = phone;
+    const dial = (place.international_phone_number || phone).replace(/\s+/g, "");
+    el.href = "tel:" + dial;
+  }
+}
+
+function renderOpeningHours(place, lang) {
+  const list = document.getElementById("openingHours");
+  const statusEl = document.getElementById("openStatus");
+  const dict = translations[lang] || translations.cs;
+  const oh = place.opening_hours;
+  if (!list || !oh) return;
+
+  if (Array.isArray(oh.weekday_text) && oh.weekday_text.length) {
+    list.innerHTML = oh.weekday_text
+      .map((t) => `<li>${escapeHtml(t)}</li>`)
+      .join("");
+  }
+
+  let openNow;
+  try {
+    if (typeof oh.isOpen === "function") openNow = oh.isOpen();
+  } catch (_) { /* ignore */ }
+  if (openNow === undefined && typeof oh.open_now === "boolean") openNow = oh.open_now;
+
+  if (statusEl && typeof openNow === "boolean") {
+    statusEl.hidden = false;
+    statusEl.textContent = openNow ? dict.open_now : dict.closed_now;
+    statusEl.classList.toggle("is-open", openNow);
+    statusEl.classList.toggle("is-closed", !openNow);
+  }
+}
+
+window.__initPlaces = function () {
+  try {
+    const cfg = window.GMAPS_CONFIG || {};
+    const svc = new google.maps.places.PlacesService(document.createElement("div"));
+    const bias = cfg.lat && cfg.lng ? { lat: cfg.lat, lng: cfg.lng } : undefined;
+
+    svc.findPlaceFromQuery(
+      { query: cfg.placeQuery, fields: ["place_id"], locationBias: bias },
+      (results, status) => {
+        if (status !== google.maps.places.PlacesServiceStatus.OK || !results || !results[0]) return;
+        svc.getDetails(
+          {
+            placeId: results[0].place_id,
+            fields: [
+              "formatted_phone_number",
+              "international_phone_number",
+              "opening_hours",
+              "utc_offset_minutes",
+              "url",
+              "name",
+            ],
+          },
+          (place, st) => {
+            if (st !== google.maps.places.PlacesServiceStatus.OK || !place) return;
+            window.__placeData = place;
+            renderPhone(place);
+            renderOpeningHours(place, currentLang);
+          }
+        );
+      }
+    );
+  } catch (_) { /* keep fallback values */ }
+};
+
+function loadGooglePlaces() {
+  const cfg = window.GMAPS_CONFIG || {};
+  if (!cfg.key || /^YOUR_/.test(cfg.key)) return; // no key yet — keep fallback
+  if (document.getElementById("gmaps-sdk")) return;
+
+  const list = document.getElementById("openingHours");
+  if (list) {
+    const dict = translations[currentLang] || translations.cs;
+    list.innerHTML = `<li class="hours-fallback">${escapeHtml(dict.hours_loading)}</li>`;
+  }
+
+  const s = document.createElement("script");
+  s.id = "gmaps-sdk";
+  s.async = true;
+  const lang = document.documentElement.lang || "cs";
+  s.src =
+    "https://maps.googleapis.com/maps/api/js?key=" +
+    encodeURIComponent(cfg.key) +
+    "&libraries=places&language=" +
+    lang +
+    "&callback=__initPlaces";
+  document.head.appendChild(s);
+}
+
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.cs;
   currentLang = lang;
@@ -159,6 +260,11 @@ function applyLanguage(lang) {
   });
 
   renderMenu(lang);
+
+  if (window.__placeData) {
+    renderPhone(window.__placeData);
+    renderOpeningHours(window.__placeData, lang);
+  }
 
   try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* ignore */ }
 }
@@ -208,4 +314,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initNav();
   initYear();
+  loadGooglePlaces();
 });

@@ -304,6 +304,16 @@ h1, h2, h3 {
 }
 .ci-value { color: var(--ink); font-size: 1.02rem; }
 .ci-value a:hover { color: var(--accent); }
+.hours-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 2px; }
+.hours-list li { color: var(--ink); font-size: 0.98rem; }
+.hours-list .hours-fallback { color: var(--muted); font-style: italic; }
+.open-status {
+  display: inline-block; margin-bottom: 6px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: .04em;
+  padding: 3px 10px; border-radius: 999px;
+}
+.open-status.is-open { background: #e2f2e0; color: #2e7d32; }
+.open-status.is-closed { background: #f7e2df; color: #b3403a; }
 .contact-map {
   position: relative;
   border-radius: var(--radius);
